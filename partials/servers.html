@@ -1,0 +1,12 @@
+<div class="sidebar">
+    <div class="sidebar-logo">
+        <img src="img/logo-2x.png">
+    </div>
+    <ul class="server-list">
+        <li ng-repeat="server in servers">
+            <a href="#/servers/{{ server.id }}" ng-class="getClass('/servers/{{ server.id }}')">{{server.name}}</a>
+        </li>
+    </ul>
+</div>
+
+<div class="content" ui-view></div>

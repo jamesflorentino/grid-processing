@@ -1,0 +1,62 @@
+body {
+    background-color: #f5ffff;
+    font-family: 'Exo', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Exo', sans-serif;
+    font-weight: bold;
+}
+
+.sidebar {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    top: 0;
+    bottom: 0;
+    background: #5aaab1;
+}
+
+.sidebar-logo img {
+    max-width: 180px;
+    margin: 20px 10px;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 30px 40px;
+}
+
+h1.logo {
+    background: #333;
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+.server-list {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.server-list li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.server-list li a {
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    background: #20717b;
+    border-top: 1px solid #378891;
+    color: #f5ffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.server-list li a.active {
+    background-color: #78c1c7;
+    text-shadow: 0 2px #175057;
+}
