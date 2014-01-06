@@ -6,7 +6,8 @@
 
 var app = angular.module('app', ['ui.router']);
 
-app.config(function($stateProvider) {
+app.config(function($stateProvider, $urlRouteProvider) {
+    $urlRouteProvider.otherwise('/servers');
     $stateProvider
         .state('servers', {
             url: '/servers',
