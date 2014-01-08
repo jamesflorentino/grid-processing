@@ -19,6 +19,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: 'partials/servers-item.html',
             controller: 'ServerItemCtrl'
         })
+        .state('servers.item.edit', {
+            url: '/edit',
+            templateUrl: 'partials/servers-item-edit.html',
+            controller: 'ServerItemEditCtrl'
+        })
+        .state('servers.item.logs', {
+            url: '/logs',
+            templateUrl: 'partials/servers-item-logs.html',
+            controller: 'ServerItemLogsCtrl'
+        })
         .state('login', {
             url: '/login',
             templateUrl: 'partials/login.html',
@@ -43,7 +53,7 @@ app.service('authenticator', function() {
 
 app.controller('ServersCtrl', function($scope, $http, $location) {
     $scope.getClass = function(path) {
-        return path === $location.path() ? 'active' : '';
+        return $location.path().indexOf(path) > -1 ? 'active' : '';
     };
     $http.get('data.json').success(function(result) {
         $scope.servers = result;
@@ -51,6 +61,13 @@ app.controller('ServersCtrl', function($scope, $http, $location) {
 });
 
 app.controller('ServerItemCtrl', function($scope, $http, $stateParams) {
+    $scope.section = 'index';
+    $scope.getClass = function(name) {
+        return name === $scope.section ? 'active' : '';
+    };
+    $scope.chooseSection = function(section) {
+        $scope.section = section;
+    };
     $http.get('data.json').success(function(result) {
         var serverId = parseInt($stateParams.id, 10);
         var server = result.filter(function(item) {
@@ -58,4 +75,17 @@ app.controller('ServerItemCtrl', function($scope, $http, $stateParams) {
         });
         $scope.server = server[0];
     });
+});
+
+app.controller('ServerItemEditCtrl', function($scope, $stateParams, $http) {
+    $http.get('data.json').success(function(result) {
+        var serverId = parseInt($stateParams.id, 10);
+        var server = result.filter(function(item) {
+            return item.id === serverId;
+        });
+        $scope.server = server[0];
+    });
+});
+
+app.controller('ServerItemLogsCtrl', function() {
 });

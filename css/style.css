@@ -24,7 +24,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .content {
     margin-left: 200px;
-    padding: 30px 40px;
 }
 
 h1.logo {
@@ -59,4 +58,35 @@ h1.logo {
 .server-list li a.active {
     background-color: #78c1c7;
     text-shadow: 0 2px #175057;
+}
+
+.topbar-nav {
+    display: block;
+    margin: 0;
+    padding: 0 10px;
+    padding-top: 40px;
+    background-color: #a7d4d8;
+}
+
+.topbar-nav li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.topbar-nav li ~ li {
+    margin-left: 5px;
+}
+
+.topbar-nav li a {
+    color: inherit;
+    display: block;
+    padding: 5px 10px;
+    background-color: #c6e5e8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.topbar-nav li a.active {
+    background-color: #f5ffff;
 }

@@ -1,12 +1,17 @@
-<h1>{{ server.name }}</h1>
-
-<div class="form-group">
-    <input id="root-user" type="text" class="form-control" placeholder="root user">
+<div class="topbar">
+    <ul class="topbar-nav">
+        <li>
+            <a href="#/servers/{{ server.id }}" ng-click="chooseSection('index')" ng-class="getClass('index')">Summary</a>
+        </li>
+        <li>
+            <a href="#/servers/{{ server.id }}/edit" ng-click="chooseSection('edit')" ng-class="getClass('edit')">Update Info</a>
+        </li>
+        <li>
+            <a href="#/servers/{{ server.id }}/logs" ng-click="chooseSection('logs')" ng-class="getClass('logs')">Logs</a>
+        </li>
+    </ul>
 </div>
-<div class="form-group">
-    <input id="root-pass" type="password" class="form-control" placeholder="root pass">
-</div>
 
-<div class="form-group">
-    <button class="btn btn-primary">Setup Server</button>
+<div ui-view>
+    <h3>Summary content</h3>
 </div>
