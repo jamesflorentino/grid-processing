@@ -1,6 +1,8 @@
 <div class="sidebar">
     <div class="sidebar-logo">
-        <img src="img/logo-2x.png">
+        <a href="#/">
+            <img src="img/logo-2x.png">
+        </a>
     </div>
     <ul class="server-list">
         <li ng-repeat="server in servers">
@@ -9,4 +11,11 @@
     </ul>
 </div>
 
-<div class="content" ui-view></div>
+<div class="content" ui-view>
+
+    <div class="jumbotron">
+        <h1>Welcome to Grid Processing</h1>
+        <p class="lead">Select a server on the left sidebar.</p>
+    </div>
+
+</div>

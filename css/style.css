@@ -90,3 +90,8 @@ h1.logo {
 .topbar-nav li a.active {
     background-color: #f5ffff;
 }
+
+
+.jumbotron {
+    background: none;
+}
